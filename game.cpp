@@ -1,6 +1,6 @@
 //============================================================================
 // Name        : game.cpp
-// Author      : FAST CS Department
+// Author      : Usman Naeem
 // Version     :
 // Copyright   : (c) Reserved
 // Description : Basic 2D game of Rush Hour...
@@ -17,11 +17,6 @@
 #include <fstream>
 using namespace std;
 
-
-// seed the random numbers generator by current time (see the documentation of srand for further help)...
-
-
- 
 int buildings[20][20] = {
 		{0},
 };
@@ -117,44 +112,6 @@ void DrawMap(){
 			}
 		}
 	}
-	/*DrawLine(0, 39, 800, 39, 1,   colors[LIGHT_GRAY]);
-	DrawLine(0, 79, 800, 79, 1,   colors[LIGHT_GRAY]);
-	DrawLine(0, 119, 800, 119, 1, colors[LIGHT_GRAY]);
-	DrawLine(0, 159, 800, 159, 1, colors[LIGHT_GRAY]);
-	DrawLine(0, 199, 800, 199, 1, colors[LIGHT_GRAY]);
-	DrawLine(0, 239, 800, 239, 1, colors[LIGHT_GRAY]);
-	DrawLine(0, 279, 800, 279, 1, colors[LIGHT_GRAY]);
-	DrawLine(0, 319, 800, 319, 1, colors[LIGHT_GRAY]);
-	DrawLine(0, 359, 800, 359, 1, colors[LIGHT_GRAY]);
-	DrawLine(0, 399, 800, 399, 1, colors[LIGHT_GRAY]);
-	DrawLine(0, 439, 800, 439, 1, colors[LIGHT_GRAY]);
-	DrawLine(0, 479, 800, 479, 1, colors[LIGHT_GRAY]);
-	DrawLine(0, 519, 800, 519, 1, colors[LIGHT_GRAY]);
-	DrawLine(0, 559, 800, 559, 1, colors[LIGHT_GRAY]);
-	DrawLine(0, 599, 800, 599, 1, colors[LIGHT_GRAY]);
-	DrawLine(0, 639, 800, 639, 1, colors[LIGHT_GRAY]);
-	DrawLine(0, 679, 800, 679, 1, colors[LIGHT_GRAY]);
-	DrawLine(0, 719, 800, 719, 1, colors[LIGHT_GRAY]);
-	DrawLine(0, 759, 800, 759, 1, colors[LIGHT_GRAY]);
-	DrawLine(39 , 0, 39 , 800, 1, colors[LIGHT_GRAY]);
-	DrawLine(79 , 0, 79 , 800, 1, colors[LIGHT_GRAY]);
-	DrawLine(119, 0, 119, 800, 1, colors[LIGHT_GRAY]);
-	DrawLine(159, 0, 159, 800, 1, colors[LIGHT_GRAY]);
-	DrawLine(199, 0, 199, 800, 1, colors[LIGHT_GRAY]);
-	DrawLine(239, 0, 239, 800, 1, colors[LIGHT_GRAY]);
-	DrawLine(279, 0, 279, 800, 1, colors[LIGHT_GRAY]);
-	DrawLine(319, 0, 319, 800, 1, colors[LIGHT_GRAY]);
-	DrawLine(359, 0, 359, 800, 1, colors[LIGHT_GRAY]);
-	DrawLine(399, 0, 399, 800, 1, colors[LIGHT_GRAY]);
-	DrawLine(439, 0, 439, 800, 1, colors[LIGHT_GRAY]);
-	DrawLine(479, 0, 479, 800, 1, colors[LIGHT_GRAY]);
-	DrawLine(519, 0, 519, 800, 1, colors[LIGHT_GRAY]);
-	DrawLine(559, 0, 559, 800, 1, colors[LIGHT_GRAY]);
-	DrawLine(599, 0, 599, 800, 1, colors[LIGHT_GRAY]);
-	DrawLine(639, 0, 639, 800, 1, colors[LIGHT_GRAY]);
-	DrawLine(679, 0, 679, 800, 1, colors[LIGHT_GRAY]);
-	DrawLine(719, 0, 719, 800, 1, colors[LIGHT_GRAY]);
-	DrawLine(759, 0, 759, 800, 1, colors[LIGHT_GRAY]);*/
 }
 int xI = 0, yI = 760;
 int x_axis_car1, y_axis_car1, x_axis_car2, y_axis_car2;
@@ -186,11 +143,6 @@ void drawCar() {
 		DrawLine(xI+14, yI+8, xI+16, yI+6, 3, colors[ORANGE]);
 		DrawLine(xI+26, yI+8, xI+24, yI+6, 3, colors[ORANGE]);
 	}
-	/*DrawRoundRect(xI+7, yI, 26, 40, taxi_color, 10);
-	DrawCircle(xI+5, yI+5, 5, colors[BLACK]);
-	DrawCircle(xI+5, yI+35, 5, colors[BLACK]);
-	DrawCircle(xI+35, yI+5, 5, colors[BLACK]);
-	DrawCircle(xI+35, yI+35, 5, colors[BLACK]);*/
 	glutPostRedisplay();
 }
 /*
@@ -861,22 +813,6 @@ void Speed(int m) {
 	moveCar();
 	// once again we tell the library to call our Timer function after next 1000/FPS
 	glutTimerFunc(1000-speed, Speed, 0);
-}
-
-/*This function is called (automatically) whenever your mouse moves witin inside the game window
- *
- * You will have to add the necessary code here for finding the direction of shooting
- *
- * This function has two arguments: x & y that tells the coordinate of current position of move mouse
- *
- * */
-void MousePressedAndMoved(int x, int y) {
-	//cout << x << " " << y << endl;
-	glutPostRedisplay();
-}
-void MouseMoved(int x, int y) {
-	//cout << x << " " << y << endl;
-	glutPostRedisplay();
 }
 
 /*This function is called (automatically) whenever your mouse button is clicked witin inside the game window
